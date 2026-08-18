@@ -1,0 +1,10 @@
+# Step 1: (notice you tend to forget this one) Generate cluster information, -noe: not including empty cluster, -nop: not including point cluster(s) 
+corrdump -l=rndstr.in -ro -noe -nop -clus -2=(distance-to-nth-neighbour) -3=(distance-to-nth-neighbour)
+# Step 2: (Optional) View generated clusters
+getclus
+# Step 3: Generate SQS structures
+sbatch sqsjob.sh
+# Step 4: Monitor progress using the following sections in this app (fucked if it disappears)
+https://atat-sqs.streamlit.app/#file-handling
+# Step 5: Convert your bestsqs.out to POSCAR with this simple app (ditto)
+https://albertlinda.com/sqs_to_poscar.html
